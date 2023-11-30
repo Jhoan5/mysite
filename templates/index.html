@@ -3,60 +3,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tu Empresa</title>
-    {% block style %}
-    <!-- Aqui van los estilos de cada pagina esto es solo una explicacion corta de lo que hacer esta cosas de {% block style %} -->
-    {% endblock %}
+    {% block style %} {% endblock %}
     <style>
-      *{
-      /* le pueden cambiar el tipo de letra, se aplica a todas las paginas */
-         font-family: "Congenial", sans-serif ; /* esta la tenian ustds */
-         color: #333 ; /* color de letra */
+      * {
+        font-family: "Congenial", sans-serif;
+        color: #333;
       }
       body {
         background-image: url("{{ url_for('static', filename= 'img/flores.jpg') }}");
         padding: 8%;
       }
 
-      header#encabezado{
-          /* este estilo abajo lo copie en el footer y el #header */
-         padding: 20px;
-         box-shadow: 0 0 3px 0 black;
-         background-color: rgba(255, 192, 203,.6);
+      header#encabezado {
+        padding: 20px;
+        box-shadow: 0 0 3px 0 black;
+        background-color: rgba(255, 192, 203, 0.6);
       }
-      #encabezado #menu #button{
-         display: flex;
-         justify-content: space-around;
-         flex-wrap: wrap;
-         list-style: none;
+      #encabezado #menu #button {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        list-style: none;
       }
-      #encabezado a{/* para los enlaces de las paginas se puede modificar*/
-         padding: 5px;
-         font-size: 1.2rem;
-         font-weight: bold;
-         text-decoration: none;
+      #encabezado a {
+        padding: 5px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-decoration: none;
       }
-      a:hover{
-         color: #08b7ff;
+      a:hover {
+        color: #08b7ff;
       }
-      a:active{
-         color: pink;
+      a:active {
+        color: pink;
       }
-      #contenido{
-         padding-top: 20px;
-         padding-bottom: 40px;
-         /* este estilo abajo lo copie en el footer y el #header */
-         padding: 20px;
-         box-shadow: 0 0 3px 0 black;
-         background-color: rgba(255, 192, 203,.6);
+      #contenido {
+        padding-top: 20px;
+        padding-bottom: 40px;
+        padding: 20px;
+        box-shadow: 0 0 3px 0 black;
+        background-color: rgba(255, 192, 203, 0.6);
       }
-      footer{
-         display: flex;
-         justify-content: space-between;
-         flex-wrap: wrap;
-          /* este estilo abajo lo copie en el footer y el #header */
-         padding: 20px;
-         box-shadow: 0 0 3px 0 black;
-         background-color: rgba(255, 192, 203,.6);
+      footer {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 20px;
+        box-shadow: 0 0 3px 0 black;
+        background-color: rgba(255, 192, 203, 0.6);
       }
     </style>
   </head>
@@ -72,30 +66,26 @@
         </ul>
       </nav>
     </header>
-    <main id="contenido">
-      {% block content %} 
-      
-      {% endblock %}
-    </main>
+    <main id="contenido">{% block content %} {% endblock %}</main>
     <footer id="pie">
       <section>
-         <h2>Nuestro Equipo</h2>
-         <div class="team">
-           <h3>Daniela Carrero Garcia</h3>
-           <h3>Sandra Milena Sanchez</h3>
-         </div>
-       </section>
-       <section>
-         <h2>Contactanos</h2>
-           <div>
-             <p>Número de Teléfono</p>
-             <p>+57 315489906</p>
-           </div>
-           <div>
-             <p>Correo Electrónico</p>
-             <p>sandraydaniela@gmail.com</p>
-           </div>
-       </section>
+        <h2>Nuestro Equipo</h2>
+        <div class="team">
+          <h3>Daniela Carrero Garcia</h3>
+          <h3>Sandra Milena Sanchez</h3>
+        </div>
+      </section>
+      <section>
+        <h2>Contactanos</h2>
+        <div>
+          <p>Número de Teléfono</p>
+          <p>+57 315489906</p>
+        </div>
+        <div>
+          <p>Correo Electrónico</p>
+          <p>sandraydaniela@gmail.com</p>
+        </div>
+      </section>
     </footer>
   </body>
 </html>
