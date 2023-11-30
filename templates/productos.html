@@ -1,0 +1,96 @@
+{% extends 'index.html' %} {% block style %}
+<style>
+  img{
+    width: 250px;
+    height: 250px;
+  }
+  #productos{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  /* esto es para cada cajita de cada producto */
+  #productos div{
+    width: 300px;
+    padding: 20px;
+  }
+</style>
+{% endblock %} {% block content %}
+<h1>productos</h1>
+<section id="productos">
+  <div>
+    <h3>Flor de Lirio</h3>
+    <p>
+      Este es otro de los nombres para florerías inspirado en una flor mítica
+      que puedes <br />
+      tener en cuenta para darle un aspecto único a tu emprendimiento. ¡Veamos
+      su origen! <br />
+    </p>
+    <img src="{{ url_for('static', filename= 'img/f1.jpeg') }}" />
+  </div>
+
+  <div>
+    <h3>Simbolo de Amor</h3>
+    <p>
+      este Areglo floral tiene uncosto de $60000<br />
+    </p>
+    <img src="{{ url_for('static', filename= 'img/f2.jpg') }}" />
+  </div>
+
+  <div>
+    <h3>Rosas surtidas</h3>
+    <p>
+      este es un Areglo floral muy hermoso ,que tiene un costo de $150000 <br />
+    </p>
+    <img src="{{ url_for('static', filename= 'img/f3.jpg') }}" />
+  </div>
+  <div>
+    <h3>Rosas lirios hermosas</h3>
+    <p>
+      estas son unas Rosas lirios muy hermosas para un lindo detalle <br />
+    </p>
+    <img src="{{ url_for('static', filename= 'img/f4.jpg') }}" />
+  </div>
+
+  <div>
+    <h3>Amor en grande un Ramo</h3>
+    <p>
+      este Ramo es muy hermoso y grande viene en los colores que <br />el
+      cliente escoja, su precio es de $200000<br />
+    </p>
+    <img src="{{ url_for('static', filename= 'img/f5.jpg') }}" />
+  </div>
+
+  <div>
+    <h3>Areglos Frutales</h3>
+    <p>
+      estos Areglos estan decorados de frutas y flores <br />
+    </p>
+    <img src="{{ url_for('static', filename= 'img/f8.jpg') }}" />
+  </div>
+  <div>
+    <h3>Paraiso tropical</h3>
+    <p>
+      este Areglo tiene unos colores muy hermosos y el costo es de 1$100000
+      <br />
+    </p>
+    <img src="{{ url_for('static', filename= 'img/f7.jpg') }}" />
+  </div>
+
+  <div>
+    <h3>Canasta de Girasoles</h3>
+    <p>
+      Los Girasoles son los mas pedidos por los clientes <br />
+    </p>
+    <img src="{{ url_for('static', filename= 'img/f8.jpg') }}" />
+  </div>
+
+  <div> 
+    <h3>Bombones</h3>
+    <p>
+      son uno de los mas hermosos y tambien los piden mucho los clientes
+      <br />
+    </p>
+    <img src="{{ url_for('static', filename= 'img/f11.jpg') }}" />
+  </div>
+</section>
+{% endblock %}

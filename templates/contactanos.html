@@ -1,0 +1,82 @@
+{% extends 'index.html' %}
+
+{% block style %}
+  <style>
+    #contenido{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #contactForm{
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 3px 0 black;
+      background-color: rgba(255, 192, 203,.6);
+    }
+    #contactForm label{
+      font-weight: bold;
+    }
+    #contactForm input, textarea{
+      max-width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border: none;
+    }
+    input[type="submit"] {
+      width: 60%;
+      margin-left: 20%;
+      border-radius: 10px;
+      background-color: #4CAF50;
+    }
+
+    input[type="submit"]:hover {
+      color: white;
+      background-color: #45a049;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <h1>Contactanos</h1>
+
+  <form id="contactForm" action="#" method="post" onsubmit="return validateForm()">
+    <label for="nombre">Nombre: </label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="correo">Correo:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="mensaje">Mensaje: </label>
+    <textarea id="mensaje" name="mensaje" cols="20" rows="10" required></textarea>
+
+    <div class="error" id="error-message"></div>
+
+    <input type="submit" value="Enviar">
+  </form>
+  <!-- Toda esta etiqueta script no creo que siva para alguna función, no genera nada -->
+  <script>
+    function validateForm() {
+      var nombre = document.getElementById('nombre').value;
+      var email = document.getElementById('email').value;
+      var mensaje = document.getElementById('mensaje').value;
+      var errorMessage = document.getElementById('error-message');
+
+      errorMessage.innerHTML = '';
+
+      if (nombre === '' || email === '' || mensaje === '') {
+        errorMessage.innerHTML = 'Por favor, completa todos los campos.';
+        return false;
+      }
+      // Puedes agregar más validaciones según tus necesidades, por ejemplo, validar el formato del correo electrónico.
+      return true;
+    }
+  </script>
+{% endblock %}
